@@ -22,7 +22,8 @@ class detalles1Controller extends Controller
     {
         $detalles1 = detalles1::all();
 
-        return view('backEnd.detalles1.index', compact('detalles1'));
+        return $detalles1;
+        // return view('backEnd.detalles1.index', compact('detalles1'));
     }
 
     /**
@@ -32,7 +33,8 @@ class detalles1Controller extends Controller
      */
     public function create()
     {
-        return view('backEnd.detalles1.create');
+        return $detalles1;
+        // return view('backEnd.detalles1.create');
     }
 
     /**
@@ -62,7 +64,8 @@ class detalles1Controller extends Controller
     {
         $detalles1 = detalles1::findOrFail($id);
 
-        return view('backEnd.detalles1.show', compact('detalles1'));
+        return $detalles1;
+        // return view('backEnd.detalles1.show', compact('detalles1'));
     }
 
     /**
@@ -76,7 +79,8 @@ class detalles1Controller extends Controller
     {
         $detalles1 = detalles1::findOrFail($id);
 
-        return view('backEnd.detalles1.edit', compact('detalles1'));
+        return $detalles1;
+        // return view('backEnd.detalles1.edit', compact('detalles1'));
     }
 
     /**
@@ -95,7 +99,8 @@ class detalles1Controller extends Controller
         Session::flash('message', 'detalles1 updated!');
         Session::flash('status', 'success');
 
-        return redirect('detalles1');
+        return $detalles1;
+        // return redirect('detalles1');
     }
 
     /**
@@ -114,7 +119,8 @@ class detalles1Controller extends Controller
         Session::flash('message', 'detalles1 deleted!');
         Session::flash('status', 'success');
 
-        return redirect('detalles1');
+        return $detalles1;
+        // return redirect('detalles1');
     }
 
 }

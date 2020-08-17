@@ -22,7 +22,8 @@ class detallesController extends Controller
     {
         $detalles = detalle::all();
 
-        return view('backEnd.detalles.index', compact('detalles'));
+        return $detalles;
+        // return view('backEnd.detalles.index', compact('detalles'));
     }
 
     /**
@@ -32,7 +33,8 @@ class detallesController extends Controller
      */
     public function create()
     {
-        return view('backEnd.detalles.create');
+        return $detalles;
+        // return view('backEnd.detalles.create');
     }
 
     /**
@@ -62,7 +64,8 @@ class detallesController extends Controller
     {
         $detalle = detalle::findOrFail($id);
 
-        return view('backEnd.detalles.show', compact('detalle'));
+        return $detalles;
+        // return view('backEnd.detalles.show', compact('detalle'));
     }
 
     /**
@@ -76,7 +79,8 @@ class detallesController extends Controller
     {
         $detalle = detalle::findOrFail($id);
 
-        return view('backEnd.detalles.edit', compact('detalle'));
+        return $detalle;
+        // return view('backEnd.detalles.edit', compact('detalle'));
     }
 
     /**
@@ -95,7 +99,8 @@ class detallesController extends Controller
         Session::flash('message', 'detalle updated!');
         Session::flash('status', 'success');
 
-        return redirect('detalles');
+        return $detalle;
+        // return redirect('detalles');
     }
 
     /**
@@ -114,7 +119,8 @@ class detallesController extends Controller
         Session::flash('message', 'detalle deleted!');
         Session::flash('status', 'success');
 
-        return redirect('detalles');
+        return $detalle;
+        // return redirect('detalles');
     }
 
 }
